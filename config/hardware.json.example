@@ -1,0 +1,8 @@
+{
+  "device": "cpu",
+  "gpu_type": "none",
+  "gpu_layers": 0,
+  "threads": 4,
+  "context_length": 2048,
+  "model_name": "Qwen/Qwen2.5-0.5B-Instruct"
+}
