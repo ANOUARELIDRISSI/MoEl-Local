@@ -1,0 +1,40 @@
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+venv_win/
+env/
+ENV/
+*.egg-info/
+.eggs/
+dist/
+build/
+
+# MoEl specific
+logs/*.log
+logs/*.pid
+uploads/*
+!uploads/example_*.txt
+!uploads/example_*.py
+outputs/*
+models/*
+config/hardware.json
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Environment
+.env
+.env.local
+
+# Temporary files
+*.tmp
+*.bak
+*.cache

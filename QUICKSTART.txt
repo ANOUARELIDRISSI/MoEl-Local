@@ -1,0 +1,135 @@
+╔═══════════════════════════════════════════════════════════╗
+║                                                           ║
+║           🚀 MoEl - Quick Start Guide 🚀                  ║
+║                                                           ║
+╚═══════════════════════════════════════════════════════════╝
+
+INSTALLATION (3 MINUTES)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1. Extract the archive:
+   
+   tar -xzf moel.tar.gz
+   cd moel
+
+2. Run the setup:
+   
+   chmod +x run.sh
+   ./run.sh setup
+
+   During setup, you'll be asked to:
+   - Choose GPU acceleration (if available)
+   - Select an LLM model (GPT-2 recommended for testing)
+
+3. Start MoEl:
+   
+   ./run.sh start
+
+4. Open your browser:
+   
+   http://localhost:5000
+
+
+USAGE EXAMPLES
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Single File Analysis:
+  1. Go to http://localhost:5000
+  2. Select task type (e.g., "Code Generation")
+  3. Enter your prompt
+  4. Click "Generate"
+
+Batch Processing:
+  1. Select "Batch Processing" tab
+  2. Upload multiple files
+  3. Set default prompt template (optional)
+  4. Click "Process Files"
+
+Test with Examples:
+  - uploads/example_code_gen.txt
+  - uploads/example_code_review.py
+  - uploads/example_translation.txt
+
+
+COMMANDS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+./run.sh setup     - Initial installation
+./run.sh start     - Start the application
+./run.sh stop      - Stop all services
+./run.sh restart   - Restart services
+./run.sh status    - Check if running
+./run.sh logs      - View live logs
+
+
+TROUBLESHOOTING
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Backend won't start:
+  → Check logs: cat logs/backend_*.log
+  → Verify model downloaded properly
+  → Ensure port 8000 is available
+
+Frontend can't connect:
+  → Verify backend is running: curl http://localhost:8000/health
+  → Check logs: cat logs/frontend_*.log
+
+Out of memory:
+  → Use smaller model (GPT-2 instead of GPT-2 Large)
+  → Switch to CPU mode if GPU memory is low
+  → Close other applications
+
+
+HARDWARE RECOMMENDATIONS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+CPU Only:
+  - GPT-2 (500MB) ✓ Fast
+  - GPT-2 Medium (1.5GB) ✓ Good
+  - GPT-2 Large (3GB) - Slow but works
+
+GPU (6GB+ VRAM):
+  - GPT-2 XL (6GB) ✓ Excellent
+  - Any 7B model ✓ Production ready
+  - 13B models ✓ High quality
+
+GPU (8GB+ VRAM):
+  - 13B models ✓ Excellent
+  - 20B models ✓ Best quality
+
+
+API ACCESS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Single inference:
+  POST http://localhost:8000/inference
+  {
+    "prompt": "Write a Python function",
+    "max_tokens": 512,
+    "temperature": 0.7,
+    "task_type": "code_gen"
+  }
+
+Batch processing:
+  POST http://localhost:8000/upload-and-process
+  (multipart/form-data with files)
+
+
+NEXT STEPS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✓ Read the complete README.md for advanced features
+✓ Try different models from HuggingFace
+✓ Customize prompts for your use case
+✓ Integrate with your applications via API
+✓ Scale up to larger models as needed
+
+
+SUPPORT
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+For detailed documentation, see README.md
+For issues, check the logs/ directory
+For configuration, edit config/hardware.json
+
+Happy coding! 🎉

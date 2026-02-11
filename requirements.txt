@@ -1,0 +1,56 @@
+# MoEl - Local LLM Platform Dependencies
+# Core Dependencies - automatically generated after setup
+
+# Deep Learning Framework
+torch>=2.0.0
+torchvision>=0.15.0
+torchaudio>=2.0.0
+
+# Transformers and Model Support
+transformers>=4.35.0
+accelerate>=0.25.0
+sentencepiece>=0.1.99
+protobuf>=3.20.0
+
+# FastAPI Backend
+fastapi>=0.104.0
+uvicorn[standard]>=0.24.0
+python-multipart>=0.0.6
+pydantic>=2.0.0
+pydantic-settings>=2.0.0
+
+# Flask Frontend
+Flask>=3.0.0
+Flask-Cors>=4.0.0
+Werkzeug>=3.0.0
+
+# HTTP and Async
+requests>=2.31.0
+aiofiles>=23.2.0
+httpx>=0.25.0
+
+# Data Processing
+numpy>=1.24.0
+pandas>=2.0.0
+
+# Utilities
+python-dotenv>=1.0.0
+click>=8.1.0
+tqdm>=4.66.0
+
+# Logging and Monitoring
+colorlog>=6.7.0
+
+# Optional: GPU Optimization (NVIDIA)
+# Install separately based on CUDA version:
+# pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
+
+# Optional: Model Quantization
+# bitsandbytes>=0.41.0
+# optimum>=1.14.0
+
+# Development (uncomment if needed)
+# pytest>=7.4.0
+# black>=23.11.0
+# flake8>=6.1.0
+# mypy>=1.7.0

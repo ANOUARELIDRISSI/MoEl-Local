@@ -1,0 +1,5 @@
+### PROMPT ###
+Translate the following English text to French, Spanish, and German:
+### END PROMPT ###
+
+Hello! Welcome to our local LLM platform. This system allows you to process text, generate code, and analyze documents using advanced AI models running on your own hardware. We hope you find it useful for your projects!
