@@ -130,6 +130,103 @@ python setup.py start
 
 ---
 
+## 📖 How to Run & Use
+
+### Step 1: Setup (First Time Only)
+
+The setup process will:
+- Create a Python virtual environment
+- Install all required dependencies
+- Download the default AI model (~1GB)
+
+```bash
+# Windows
+.\run.ps1 setup
+
+# Linux/Mac
+./run.sh setup
+
+# Or using Python directly
+python setup.py setup
+```
+
+⏱️ **Setup takes 3-10 minutes** depending on your internet speed.
+
+### Step 2: Start the Application
+
+```bash
+# Windows
+.\run.ps1 start
+
+# Linux/Mac
+./run.sh start
+
+# Or using Python
+python setup.py start
+```
+
+This will:
+1. Start the **Backend API** on port `8000`
+2. Start the **Web Interface** on port `5000`
+3. Open your browser automatically
+
+### Step 3: Use the Web Interface
+
+Once running, open **http://localhost:5000** in your browser:
+
+#### Single Prompt Mode
+1. Select a **Task Type** (General, Code Generation, Code Review, Translation, Summarization)
+2. Enter your **prompt** in the text area
+3. Adjust settings (optional):
+   - **Max Tokens**: Length of response (default: 512)
+   - **Temperature**: Creativity level 0.0-1.0 (default: 0.7)
+4. Click **Generate**
+5. View the AI response
+
+#### Batch Processing Mode
+1. Click **"Batch Processing"** tab
+2. Upload multiple files (.txt, .py, .js, .md, etc.)
+3. Set a **default prompt template** (use `{content}` as placeholder)
+   - Example: `"Review this code and suggest improvements: {content}"`
+4. Click **Process Files**
+5. View results for each file
+
+### Step 4: Stop the Application
+
+```bash
+# Windows
+.\run.ps1 stop
+
+# Linux/Mac
+./run.sh stop
+
+# Or using Python
+python setup.py stop
+```
+
+### Example Usage
+
+**Code Generation:**
+```
+Prompt: "Write a Python function to find prime numbers up to n"
+Task: Code Generation
+```
+
+**Code Review:**
+```
+Prompt: "Review this code for bugs and improvements"
+Task: Code Review
+[Upload your code file]
+```
+
+**Translation:**
+```
+Prompt: "Translate this text to French: Hello, how are you?"
+Task: Translation
+```
+
+---
+
 ## 🎮 Commands Reference
 
 | Action | Windows | Linux/Mac | Python |
